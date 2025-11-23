@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Charity Galley Foundation | Donate</title>
+    <meta name="author" content="Charity Galley Foundation" />
+    <meta name="description" content="Support Charity Galley Foundation's mission" />
+    <meta name="keywords" content="Charity Galley Foundation, Donation, Charity, Support" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon.ico" />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Lexend:wght@300;400;500;600;700;800;900&amp;family=Lobster&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/app.min.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    
+    <style>
+      .payment-method-card {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+      
+      .payment-method-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+      
+      .payment-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #f3f4f6;
+      }
+      
+      .payment-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #017d03 0%, #015a02 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        flex-shrink: 0;
+      }
+      
+      .payment-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        color: #1f2937;
+      }
+      
+      .payment-description {
+        color: #6b7280;
+        font-size: 14px;
+        margin: 0;
+      }
+      
+      .payment-details {
+        padding: 20px;
+        background: #f9fafb;
+        border-radius: 10px;
+      }
+      
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      
+      .detail-row:last-child {
+        border-bottom: none;
+      }
+      
+      .detail-label {
+        font-weight: 600;
+        color: #6b7280;
+        font-size: 14px;
+      }
+      
+      .detail-value {
+        font-weight: 700;
+        color: #1f2937;
+        font-size: 15px;
+      }
+      
+      .copy-btn {
+        padding: 8px 16px;
+        background: #017d03;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+      
+      .copy-btn:hover {
+        background: #015a02;
+        transform: scale(1.05);
+      }
+      
+      .payment-link {
+        display: inline-block;
+        padding: 12px 24px;
+        background: #017d03;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .payment-link:hover {
+        background: #015a02;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(1, 125, 3, 0.3);
+        color: white;
+      }
+      
+      .payment-link i {
+        margin-right: 8px;
+      }
+      
+      @media (max-width: 767px) {
+        .payment-header {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .detail-row {
+          flex-direction: column;
+          gap: 8px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-search-box d-none d-lg-block">
+      <button class="searchClose"><i class="fal fa-times"></i></button>
+      <form action="#">
+        <input type="text" placeholder="What are you looking for?" />
+        <button type="submit"><i class="fal fa-search"></i></button>
+      </form>
+    </div>
+    <div class="th-menu-wrapper">
+      <div class="th-menu-area text-center">
+        <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+        <div class="mobile-logo">
+          <a href="index.html"><img src="assets/img/icon/logo.png" width="70px" alt="Charity Galley"/></a>
+        </div>
+        <div class="th-mobile-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="donation.html">Donate</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <header class="th-header header-layout1">
+      <div class="sticky-wrapper">
+        <div class="menu-area">
+          <div class="container">
+            <div class="row align-items-center justify-content-between">
+              <div class="col-auto">
+                <div class="header-logo">
+                  <a href="index.html"><img src="assets/img/icon/logo.png" width="70px" alt="Charity Galley"/></a>
+                </div>
+              </div>
+              <div class="col-auto">
+                <nav class="main-menu d-none d-lg-inline-block">
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="donation.html">Donate</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </nav>
+                <button type="button" class="th-menu-toggle d-block d-lg-none">
+                  <i class="far fa-bars"></i>
+                </button>
+              </div>
+              <div class="col-auto d-none d-xl-block">
+                <div class="header-button">
+                  <button type="button" class="simple-icon searchBoxToggler">
+                    <i class="far fa-search"></i>
+                  </button>
+                  <a href="donation.html" class="th-btn style4">Donate<i class="fas fa-chevrons-right ms-2"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="breadcumb-wrapper" data-bg-src="assets/img/normal/groupservices.png">
+      <div class="container">
+        <div class="breadcumb-content">
+          <h1 class="breadcumb-title text-theme">Donate Now</h1>
+          <ul class="breadcumb-menu">
+            <li><a href="index.html">Home</a></li>
+            <li>Donate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="space">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="title-area text-center mb-50">
+              <span class="sub-title">
+                <img src="assets/img/theme-img/title_icon.svg" alt="Icon" />
+                Support Our Mission
+              </span>
+              <h2 class="sec-title">Ways to Donate</h2>
+              <p class="sec-text">
+                Your generous donation helps us transform lives and create lasting change in communities. 
+                Choose your preferred payment method below.
+              </p>
+            </div>
+
+            <!-- Online Payment -->
+            <div class="payment-method-card">
+              <div class="payment-header">
+                <div class="payment-icon"><i class="fas fa-credit-card"></i></div>
+                <div>
+                  <h3 class="payment-title">Online Payment</h3>
+                  <p class="payment-description">Quick and secure payment via Zelle or PayPal</p>
+                </div>
+              </div>
+              <div class="payment-details">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <h5 class="mb-3">Zelle</h5>
+                    <p><strong>Email:</strong> sedudzikofiama@gmail.org</p>
+                    <div class="mt-3">
+                      <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiIiwidG9rZW4iOiJzZWR1ZHppbmFtZnVnYXJAZnJpZW5kc29manVuaXBlcnRyZWUub3JnIn0=" target="_blank" class="payment-link">
+                        <i class="fas fa-external-link-alt"></i>Pay with Zelle
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <h5 class="mb-3">PayPal</h5>
+                    <p><strong>Email:</strong> donate@charitygalley.org</p>
+                    <div class="mt-3">
+                      <a href="https://www.paypal.com/gh/home" target="_blank" class="payment-link">
+                        <i class="fab fa-paypal"></i>Pay with PayPal
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bank Transfer -->
+            <div class="payment-method-card">
+              <div class="payment-header">
+                <div class="payment-icon"><i class="fas fa-university"></i></div>
+                <div>
+                  <h3 class="payment-title">Bank Transfer</h3>
+                  <p class="payment-description">Direct bank transfer (Ghana & International)</p>
+                </div>
+              </div>
+              <div class="payment-details">
+                <h5 class="mb-3">Bank Account Details</h5>
+                <table class="table table-bordered">
+                  <tbody>
+                    <tr>
+                      <td><strong>Bank Name:</strong></td>
+                      <td>GCB Bank Limited</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Account Name:</strong></td>
+                      <td>Charity Galley Foundation for Education</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Account Number:</strong></td>
+                      <td>1234567890 <button class="copy-btn" onclick="copyToClipboard('1234567890')"><i class="far fa-copy"></i> Copy</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Branch:</strong></td>
+                      <td>Accra Main Branch</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Swift Code:</strong></td>
+                      <td>GCBKGHAC <button class="copy-btn" onclick="copyToClipboard('GCBKGHAC')"><i class="far fa-copy"></i> Copy</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Mobile Money -->
+            <div class="payment-method-card">
+              <div class="payment-header">
+                <div class="payment-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div>
+                  <h3 class="payment-title">Mobile Money</h3>
+                  <p class="payment-description">MTN, Vodafone, AirtelTigo Mobile Money</p>
+                </div>
+              </div>
+              <div class="payment-details">
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">MTN Mobile Money</h5>
+                    <p><strong>Number:</strong> 0244-123-456</p>
+                    <p><strong>Name:</strong> Charity Galley</p>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">Vodafone Cash</h5>
+                    <p><strong>Number:</strong> 0204-123-456</p>
+                    <p><strong>Name:</strong> Charity Galley</p>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">AirtelTigo Money</h5>
+                    <p><strong>Number:</strong> 0274-123-456</p>
+                    <p><strong>Name:</strong> Charity Galley</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cryptocurrency -->
+            <div class="payment-method-card">
+              <div class="payment-header">
+                <div class="payment-icon"><i class="fab fa-bitcoin"></i></div>
+                <div>
+                  <h3 class="payment-title">Cryptocurrency</h3>
+                  <p class="payment-description">Bitcoin, Ethereum, USDT donations accepted</p>
+                </div>
+              </div>
+              <div class="payment-details">
+                <div class="row">
+                  <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">Bitcoin (BTC)</h5>
+                    <p style="word-break: break-all; font-size: 13px; font-family: monospace; background: white; padding: 10px; border-radius: 5px;">
+                      1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
+                    </p>
+                    <button class="copy-btn" onclick="copyToClipboard('1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2')">
+                      <i class="far fa-copy"></i> Copy Address
+                    </button>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">Ethereum (ETH)</h5>
+                    <p style="word-break: break-all; font-size: 13px; font-family: monospace; background: white; padding: 10px; border-radius: 5px;">
+                      0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb
+                    </p>
+                    <button class="copy-btn" onclick="copyToClipboard('0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb')">
+                      <i class="far fa-copy"></i> Copy Address
+                    </button>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <h5 class="mb-3">USDT (TRC20)</h5>
+                    <p style="word-break: break-all; font-size: 13px; font-family: monospace; background: white; padding: 10px; border-radius: 5px;">
+                      TXzK2JvfN7wD5YZXx6PnrKPx8p7g4Mnb7Q
+                    </p>
+                    <button class="copy-btn" onclick="copyToClipboard('TXzK2JvfN7wD5YZXx6PnrKPx8p7g4Mnb7Q')">
+                      <i class="far fa-copy"></i> Copy Address
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Check/Money Order -->
+            <div class="payment-method-card">
+              <div class="payment-header">
+                <div class="payment-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <h3 class="payment-title">Check / Money Order</h3>
+                  <p class="payment-description">Mail your donation to our office</p>
+                </div>
+              </div>
+              <div class="payment-details">
+                <p><strong>Make Checks Payable To:</strong> Charity Galley Foundation for Education</p>
+                <div class="mt-3">
+                  <h5 class="mb-2">Mailing Address:</h5>
+                  <p style="line-height: 1.8; color: #1f2937; font-weight: 500;">
+                    Charity Galley Foundation for Education<br>
+                    P.O. Box 1234<br>
+                    Accra, Ghana<br>
+                    West Africa
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="payment-method-card">
+              <div class="payment-header">
+                <div class="payment-icon"><i class="fas fa-question-circle"></i></div>
+                <div>
+                  <h3 class="payment-title">Need Help?</h3>
+                  <p class="payment-description">Contact us for donation assistance</p>
+                </div>
+              </div>
+              <div class="payment-details">
+                <div class="row">
+                  <div class="col-md-6">
+                    <p><i class="fas fa-phone me-2" style="color: #017d03;"></i> <strong>Phone:</strong> +(233)-2654-3564</p>
+                  </div>
+                  <div class="col-md-6">
+                    <p><i class="fas fa-envelope me-2" style="color: #017d03;"></i> <strong>Email:</strong> info@charitygalleyfoundation.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="">
+      <div class="container z-index-common">
+        <div class="newsletter-wrap">
+          <div class="newsletter-content">
+            <h4 class="newsletter-title">Sign Up to Get Updates & News About Us.</h4>
+          </div>
+          <form class="newsletter-form">
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="Email Address" required="" />
+            </div>
+            <button type="submit" class="th-btn style6">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-wrapper footer-layout1" data-bg-src="assets/img/bg/footer_bg_1.jpg">
+      <div class="widget-area">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget footer-widget">
+                <div class="th-widget-about">
+                  <div class="about-logo">
+                    <a href="index.html"><img class="rounded" src="assets/img/icon/logo.png" width="70px" alt="Charity Galley"/></a>
+                  </div>
+                  <p class="about-text">
+                    Transforming lives through education, technology, and community support across Ghana.
+                  </p>
+                  <div class="th-social">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget widget_nav_menu footer-widget">
+                <h3 class="widget_title">
+                  <img src="assets/img/theme-img/title_icon.svg" alt="Icon" />Quick Links
+                </h3>
+                <div class="menu-all-pages-container">
+                  <ul class="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="faq.html">Help & FAQs</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget footer-widget">
+                <h3 class="widget_title">
+                  <img src="assets/img/theme-img/title_icon.svg" alt="Icon" />Contact Us
+                </h3>
+                <div class="th-widget-contact">
+                  <div class="info-box">
+                    <div class="info-box_icon"><i class="fas fa-location-dot"></i></div>
+                    <p class="info-box_text">Ghana Accra, West Africa  00233</p>
+                  </div>
+                  <div class="info-box">
+                    <div class="info-box_icon"><i class="fas fa-phone"></i></div>
+                    <p class="info-box_text">
+                      <a href="tel:+2332654564" class="info-box_link">+(233)-2654-3564</a>
+                    </p>
+                  </div>
+                  <div class="info-box">
+                    <div class="info-box_icon"><i class="fas fa-envelope"></i></div>
+                    <p class="info-box_text">
+                      <a href="mailto:info@charitygalleyfoundation.com" class="info-box_link">info@charitygalleyfoundation.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-auto">
+              <div class="widget footer-widget">
+                <h3 class="widget_title">
+                  <img src="assets/img/theme-img/title_icon.svg" alt="Icon" />Secure Donations
+                </h3>
+                <p class="mb-3">All donations are tax-deductible</p>
+                <div class="payment-img">
+                  <img src="assets/img/normal/payment_methods.png" alt="Payment Methods" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrap">
+        <div class="container">
+          <div class="row gy-2 align-items-center">
+            <div class="col-md-6">
+              <p class="copyright-text">
+                Copyright <i class="fal fa-copyright"></i> 2025
+                <a href="https://blackcodecyberzone.tech/">BlackCodeCyberZone</a>. All Rights Reserved.
+              </p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <p class="mb-0">Thank you for your generous support!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="scroll-top">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s;stroke-dasharray: 307.919, 307.919;stroke-dashoffset: 307.919;"></path>
+      </svg>
+    </div>
+
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert('✓ Copied: ' + text);
+        }).catch(err => {
+          const textArea = document.createElement('textarea');
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.select();
+          try {
+            document.execCommand('copy');
+            alert('✓ Copied: ' + text);
+          } catch (err) {
+            alert('Failed to copy. Please copy manually.');
+          }
+          document.body.removeChild(textArea);
+        });
+      }
+    </script>
+  </body>
+</html>
