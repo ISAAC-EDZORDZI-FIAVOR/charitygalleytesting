@@ -1927,7 +1927,10 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </section>
-<!-- GLOBAL COMMUNITY MAP SECTION - INSERT AFTER VOLUNTEERS SECTION -->
+
+
+
+    <!-- SIMPLIFIED GLOBAL COMMUNITY SECTION -->
 <section class="space bg-smoke2" id="global-community-sec">
   <div class="container z-index-common">
     <!-- Title Area -->
@@ -1941,7 +1944,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <h2 class="sec-title">Our Worldwide Community of Change-Makers</h2>
           <p class="sec-text">
             From volunteers on the ground to generous donors and committed benefactors, 
-            our global family spans continents united by one mission: transforming lives through education and opportunity.
+            our global family spans continents united by one mission: transforming lives through education.
           </p>
         </div>
       </div>
@@ -1967,49 +1970,16 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
 
-    <!-- Map Container -->
+    <!-- Globe Container -->
     <div class="row">
       <div class="col-12">
-        <div class="global-map-wrapper">
-          <div class="map-container" id="globalMapContainer">
-            <!-- SVG World Map -->
-            <svg class="world-map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-              <!-- Ocean Background -->
-              <rect width="1000" height="500" fill="#e0f2fe" class="ocean"/>
-              
-              <!-- Continents with better detail -->
-              <!-- North America -->
-              <path class="continent" d="M 80 140 Q 120 120 160 130 L 200 140 Q 220 150 240 160 L 260 180 Q 270 200 260 220 L 240 240 Q 210 250 180 245 L 150 235 Q 120 220 100 200 L 85 175 Q 75 155 80 140 Z" fill="#94a3b8" opacity="0.4"/>
-              
-              <!-- South America -->
-              <path class="continent" d="M 200 280 Q 230 270 260 285 L 280 310 Q 285 340 275 370 L 260 395 Q 240 405 220 400 L 200 390 Q 185 370 190 345 L 195 315 Q 195 290 200 280 Z" fill="#94a3b8" opacity="0.4"/>
-              
-              <!-- Europe -->
-              <path class="continent" d="M 450 140 Q 490 135 520 145 L 540 160 Q 545 180 540 200 L 520 215 Q 495 220 470 215 L 450 200 Q 445 175 450 155 Z" fill="#94a3b8" opacity="0.4"/>
-              
-              <!-- Africa -->
-              <path class="continent" d="M 480 220 Q 520 215 550 230 L 570 260 Q 575 300 565 340 L 545 370 Q 520 380 495 375 L 475 360 Q 465 330 470 290 L 475 255 Q 477 235 480 220 Z" fill="#94a3b8" opacity="0.4"/>
-              
-              <!-- Asia -->
-              <path class="continent" d="M 580 140 Q 650 130 720 145 L 780 165 Q 820 185 850 210 L 870 240 Q 875 270 865 300 L 840 320 Q 800 330 760 325 L 710 315 Q 670 300 640 280 L 610 255 Q 585 225 580 195 Z" fill="#94a3b8" opacity="0.4"/>
-              
-              <!-- Australia -->
-              <path class="continent" d="M 780 360 Q 820 355 850 365 L 870 385 Q 875 410 865 430 L 840 440 Q 810 445 785 440 L 770 425 Q 765 400 770 380 Z" fill="#94a3b8" opacity="0.4"/>
-              
-              <!-- Animated wave overlay -->
-              <g class="wave-animation">
-                <circle cx="0" cy="0" r="3" fill="#017d03" opacity="0.3">
-                  <animate attributeName="r" from="0" to="15" dur="2s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite"/>
-                </circle>
-              </g>
-            </svg>
-
-            <!-- Person Markers (will be added by JavaScript) -->
-            <div class="person-markers-container" id="personMarkersContainer"></div>
-
-            <!-- Connection Lines Canvas -->
-            <canvas id="connectionCanvas" class="connection-canvas"></canvas>
+        <div class="globe-wrapper">
+          <div class="globe-container">
+            <!-- Globe Image -->
+            <img src="assets/img/normal/11444549.png" alt="Globe" class="globe-image" />
+            
+            <!-- Person Markers Container -->
+            <div class="person-markers-overlay" id="personMarkersContainer"></div>
           </div>
 
           <!-- Map Legend -->
@@ -2085,10 +2055,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="cta-text text-white">Be part of a movement that's changing lives across continents. Your contribution, big or small, creates ripples of positive change.</p>
           </div>
           <div class="cta-buttons">
-            <a href="contact.html" class="th-btn">
+            <a href="donation.html" class="th-btn">
               Become a Volunteer<i class="fas fa-chevrons-right ms-2"></i>
             </a>
-            <a href="contact.html" class="th-btn style4 ms-3">
+            <a href="donation.html" class="th-btn style4 ms-3">
               Make a Donation<i class="fas fa-chevrons-right ms-2"></i>
             </a>
           </div>
@@ -2098,47 +2068,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<!-- Person Detail Modal -->
-<div class="person-modal" id="personModal">
-  <div class="modal-overlay"></div>
-  <div class="modal-container">
-    <button class="modal-close" id="modalClose">
-      <i class="fas fa-times"></i>
-    </button>
-    <div class="modal-content">
-      <div class="modal-image">
-        <img id="modalImage" src="" alt="" />
-        <div class="modal-badge" id="modalBadge"></div>
-      </div>
-      <div class="modal-info">
-        <h3 class="modal-name" id="modalName"></h3>
-        <p class="modal-role" id="modalRole"></p>
-        <div class="modal-divider"></div>
-        <div class="modal-details">
-          <div class="detail-item">
-            <i class="fas fa-user-circle"></i>
-            <span id="modalType"></span>
-          </div>
-          <div class="detail-item">
-            <i class="fas fa-globe"></i>
-            <span>Global Community Member</span>
-          </div>
-        </div>
-        <div class="modal-description" id="modalDescription">
-          Making a difference in communities worldwide through dedication and support.
-        </div>
-        <div class="modal-social">
-          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CSS Styles for Global Community Section -->
+<!-- CSS Styles for Simplified Global Community -->
 <style>
 /* Filter Buttons */
 .community-filter-buttons {
@@ -2181,25 +2111,25 @@ document.addEventListener('DOMContentLoaded', function() {
   font-size: 16px;
 }
 
-/* Map Wrapper */
-.global-map-wrapper {
+/* Globe Wrapper */
+.globe-wrapper {
   background: white;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
 
-.global-map-wrapper::before {
+.globe-wrapper::before {
   content: '';
   position: absolute;
   top: -50%;
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(1, 125, 3, 0.03) 0%, transparent 70%);
-  animation: rotateGradient 20s linear infinite;
+  background: radial-gradient(circle, rgba(1, 125, 3, 0.05) 0%, transparent 70%);
+  animation: rotateGradient 30s linear infinite;
 }
 
 @keyframes rotateGradient {
@@ -2207,41 +2137,74 @@ document.addEventListener('DOMContentLoaded', function() {
   to { transform: rotate(360deg); }
 }
 
-/* Map Container */
-.map-container {
+/* Globe Container */
+/* Globe Container - INCREASED SIZE */
+.globe-container {
   position: relative;
-  width: 100%;
-  height: 500px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%);
+  max-width: 900px; /* Changed from 700px */
+  margin: 0 auto;
+  aspect-ratio: 1;
 }
 
-.world-map-svg {
+/* Update responsive sizes too */
+@media (max-width: 991px) {
+  .globe-container {
+    max-width: 750px; /* Changed from 600px */
+  }
+  
+  .person-marker {
+    width: 65px; /* Increased from 55px */
+    height: 65px;
+  }
+}
+
+@media (max-width: 767px) {
+  .globe-wrapper {
+    padding: 30px;
+  }
+  
+  .globe-container {
+    max-width: 600px; /* Changed from 500px */
+  }
+  
+  .person-marker {
+    width: 55px; /* Increased from 45px */
+    height: 55px;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 575px) {
+  .globe-wrapper {
+    padding: 20px;
+  }
+  
+  .globe-container {
+    max-width: 500px; /* Changed from 400px */
+  }
+  
+  .person-marker {
+    width: 48px; /* Increased from 38px */
+    height: 48px;
+  }
+}
+
+.globe-image {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
+  animation: rotateGlobe 60s linear infinite;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
 }
 
-.continent {
-  transition: all 0.3s ease;
+@keyframes rotateGlobe {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.continent:hover {
-  opacity: 0.6 !important;
-  fill: #017d03;
-}
-
-.person-markers-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.connection-canvas {
+/* Person Markers Overlay */
+.person-markers-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -2253,46 +2216,52 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Person Markers */
 .person-marker {
   position: absolute;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all 0.3s ease;
   pointer-events: all;
-  animation: markerPulse 2s ease-in-out infinite;
   background: white;
+  animation: float 3s ease-in-out infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-@keyframes markerPulse {
+@keyframes float {
   0%, 100% {
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: translateY(-8px) scale(1.05);
   }
 }
 
 .person-marker.volunteer {
   border-color: #10b981;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+  animation-delay: 0s;
 }
 
 .person-marker.donor {
   border-color: #f59e0b;
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+  animation-delay: 0.5s;
 }
 
 .person-marker.benefactor {
   border-color: #8b5cf6;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+  animation-delay: 1s;
 }
 
 .person-marker:hover {
-  transform: scale(1.25);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px) scale(1.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   z-index: 100;
   animation: none;
 }
@@ -2309,29 +2278,30 @@ document.addEventListener('DOMContentLoaded', function() {
   object-fit: cover;
 }
 
-/* Person Info Tooltip */
-.person-info {
+/* Tooltip on hover */
+.person-marker::after {
+  content: attr(data-name);
   position: absolute;
-  bottom: -70px;
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.9);
   color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
   white-space: nowrap;
-  font-size: 13px;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
-  z-index: 200;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.person-info::before {
+.person-marker::before {
   content: '';
   position: absolute;
-  top: -6px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 0;
@@ -2339,44 +2309,13 @@ document.addEventListener('DOMContentLoaded', function() {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 6px solid rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
-.person-marker:hover .person-info {
+.person-marker:hover::after,
+.person-marker:hover::before {
   opacity: 1;
-  bottom: -60px;
-}
-
-.person-info .name {
-  font-weight: 600;
-  margin-bottom: 3px;
-  display: block;
-}
-
-.person-info .role {
-  font-size: 11px;
-  opacity: 0.8;
-  display: block;
-}
-
-.person-info .role-badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 10px;
-  font-weight: 600;
-  margin-top: 3px;
-}
-
-.person-info .role-badge.volunteer {
-  background: #10b981;
-}
-
-.person-info .role-badge.donor {
-  background: #f59e0b;
-}
-
-.person-info .role-badge.benefactor {
-  background: #8b5cf6;
 }
 
 /* Map Legend */
@@ -2384,9 +2323,9 @@ document.addEventListener('DOMContentLoaded', function() {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #e5e7eb;
 }
 
 .legend-item {
@@ -2395,14 +2334,14 @@ document.addEventListener('DOMContentLoaded', function() {
   gap: 10px;
   font-size: 14px;
   color: #6b7280;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .legend-color {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .volunteer-color {
@@ -2584,13 +2523,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* Responsive Design */
 @media (max-width: 991px) {
-  .map-container {
-    height: 400px;
+  .globe-container {
+    max-width: 600px;
   }
   
   .person-marker {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
   }
   
   .community-cta {
@@ -2604,13 +2543,17 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 @media (max-width: 767px) {
-  .map-container {
-    height: 350px;
+  .globe-wrapper {
+    padding: 30px;
+  }
+  
+  .globe-container {
+    max-width: 500px;
   }
   
   .person-marker {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-width: 2px;
   }
   
@@ -2648,17 +2591,17 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 @media (max-width: 575px) {
-  .map-container {
-    height: 300px;
+  .globe-wrapper {
+    padding: 20px;
+  }
+  
+  .globe-container {
+    max-width: 400px;
   }
   
   .person-marker {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .global-map-wrapper {
-    padding: 20px;
+    width: 38px;
+    height: 38px;
   }
   
   .community-cta {
@@ -2669,430 +2612,89 @@ document.addEventListener('DOMContentLoaded', function() {
     font-size: 22px;
   }
 }
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+  .globe-image,
+  .person-marker {
+    animation: none !important;
+  }
+}
+
 </style>
 
-<!-- Modal Styles -->
-<style>
-/* Person Modal */
-.person-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.person-modal.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
-  cursor: pointer;
-}
-
-.modal-container {
-  position: relative;
-  max-width: 900px;
-  width: 90%;
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-  z-index: 10000;
-}
-
-.person-modal.active .modal-container {
-  transform: scale(1);
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 10001;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-close:hover {
-  background: rgba(0, 0, 0, 0.8);
-  transform: rotate(90deg);
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: row;
-  min-height: 500px;
-}
-
-.modal-image {
-  flex: 0 0 400px;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, #017d03 0%, #015a02 100%);
-}
-
-.modal-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.modal-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  padding: 8px 20px;
-  border-radius: 25px;
-  font-size: 13px;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.modal-badge.volunteer {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-}
-
-.modal-badge.donor {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-}
-
-.modal-badge.benefactor {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-}
-
-.modal-info {
-  flex: 1;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-name {
-  font-size: 32px;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0 0 10px 0;
-  line-height: 1.2;
-}
-
-.modal-role {
-  font-size: 18px;
-  color: #017d03;
-  font-weight: 600;
-  margin: 0 0 20px 0;
-}
-
-.modal-divider {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #017d03 0%, #015a02 100%);
-  border-radius: 3px;
-  margin-bottom: 25px;
-}
-
-.modal-details {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 25px;
-}
-
-.detail-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.detail-item i {
-  width: 24px;
-  font-size: 18px;
-  color: #017d03;
-}
-
-.modal-description {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #6b7280;
-  margin-bottom: 30px;
-  flex: 1;
-}
-
-.modal-social {
-  display: flex;
-  gap: 12px;
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
-}
-
-.social-link {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #f3f4f6;
-  color: #6b7280;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.social-link:hover {
-  background: linear-gradient(135deg, #017d03 0%, #015a02 100%);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(1, 125, 3, 0.4);
-}
-
-/* Responsive Modal */
-@media (max-width: 991px) {
-  .modal-content {
-    flex-direction: column;
-    min-height: auto;
-  }
-  
-  .modal-image {
-    flex: 0 0 300px;
-    width: 100%;
-  }
-  
-  .modal-info {
-    padding: 30px;
-  }
-  
-  .modal-name {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 767px) {
-  .modal-container {
-    width: 95%;
-  }
-  
-  .modal-image {
-    flex: 0 0 250px;
-  }
-  
-  .modal-info {
-    padding: 25px;
-  }
-  
-  .modal-name {
-    font-size: 22px;
-  }
-  
-  .modal-role {
-    font-size: 16px;
-  }
-  
-  .modal-close {
-    top: 15px;
-    right: 15px;
-    width: 35px;
-    height: 35px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 575px) {
-  .modal-image {
-    flex: 0 0 200px;
-  }
-  
-  .modal-info {
-    padding: 20px;
-  }
-  
-  .modal-social {
-    justify-content: center;
-  }
-}
-</style>
-
-<!-- JavaScript for Global Community Section -->
+<!-- Simplified JavaScript -->
 <script>
 // Community Members Data
 const communityMembers = [
   // Volunteers
-  { name: "Alhando Robert", role: "Volunteer", type: "volunteer", image: "assets/img/team/1.jpg", lat: 32, lng: 15 },
-  { name: "Eliana Bellingham", role: "Volunteer", type: "volunteer", image: "assets/img/team/2.jpg", lat: 45, lng: 25 },
-  { name: "Emanuel Macule", role: "Volunteer", type: "volunteer", image: "assets/img/team/2.jpg", lat: 38, lng: 55 },
-  { name: "Sarah Martinez", role: "Volunteer", type: "volunteer", image: "assets/img/team/3.jpg", lat: 28, lng: 72 },
-  { name: "James Wilson", role: "Volunteer", type: "volunteer", image: "assets/img/team/4.jpg", lat: 52, lng: 48 },
-  { name: "Maria Garcia", role: "Volunteer", type: "volunteer", image: "assets/img/team/5.jpg", lat: 42, lng: 65 },
+  { name: "Alhando Robert", type: "volunteer", image: "assets/img/team/1.jpg", x: 30, y: 25 },
+  { name: "Eliana Bellingham", type: "volunteer", image: "assets/img/team/2.jpg", x: 48, y: 22 },
+  { name: "Emanuel Macule", type: "volunteer", image: "assets/img/team/2.jpg", x: 55, y: 35 },
+  { name: "Sarah Martinez", type: "volunteer", image: "assets/img/team/3.jpg", x: 70, y: 40 },
+  { name: "James Wilson", type: "volunteer", image: "assets/img/team/4.jpg", x: 45, y: 30 },
+  { name: "Maria Garcia", type: "volunteer", image: "assets/img/team/5.jpg", x: 62, y: 28 },
   
   // Donors
-  { name: "David Chen", role: "Donor", type: "donor", image: "assets/img/team/6.jpg", lat: 48, lng: 82 },
-  { name: "Lisa Anderson", role: "Donor", type: "donor", image: "assets/img/team/7.jpg", lat: 35, lng: 42 },
-  { name: "Ahmed Hassan", role: "Donor", type: "donor", image: "assets/img/team/8.jpg", lat: 25, lng: 52 },
-  { name: "Sophie Laurent", role: "Donor", type: "donor", image: "assets/img/team/9.jpg", lat: 55, lng: 35 },
-  { name: "Carlos Rodriguez", role: "Donor", type: "donor", image: "assets/img/team/10.jpg", lat: 18, lng: 22 },
+  { name: "David Chen", type: "donor", image: "assets/img/team/6.jpg", x: 75, y: 32 },
+  { name: "Lisa Anderson", type: "donor", image: "assets/img/team/7.jpg", x: 40, y: 45 },
+  { name: "Ahmed Hassan", type: "donor", image: "assets/img/team/8.jpg", x: 52, y: 55 },
+  { name: "Sophie Laurent", type: "donor", image: "assets/img/team/9.jpg", x: 50, y: 20 },
+  { name: "Carlos Rodriguez", type: "donor", image: "assets/img/team/10.jpg", x: 25, y: 50 },
   
   // Benefactors
-  { name: "Jennifer Lee", role: "Benefactor", type: "benefactor", image: "assets/img/team/11.jpg", lat: 62, lng: 58 },
-  { name: "Michael Brown", role: "Benefactor", type: "benefactor", image: "assets/img/team/ike.png", lat: 38, lng: 18 },
-  { name: "Anna Kowalski", role: "Benefactor", type: "benefactor", image: "assets/img/team/5.jpg", lat: 58, lng: 28 },
-  { name: "Fatima Ahmed", role: "Benefactor", type: "benefactor", image: "assets/img/team/7.jpg", lat: 44, lng: 75 },
-  { name: "John Smith", role: "Benefactor", type: "benefactor", image: "assets/img/team/1.jpg", lat: 50, lng: 12 },
+  { name: "Jennifer Lee", type: "benefactor", image: "assets/img/team/11.jpg", x: 68, y: 48 },
+  { name: "Michael Brown", type: "benefactor", image: "assets/img/team/ike.png", x: 35, y: 38 },
+  { name: "Anna Kowalski", type: "benefactor", image: "assets/img/team/5.jpg", x: 58, y: 25 },
+  { name: "Fatima Ahmed", type: "benefactor", image: "assets/img/team/7.jpg", x: 65, y: 42 },
+  { name: "John Smith", type: "benefactor", image: "assets/img/team/1.jpg", x: 42, y: 35 },
 ];
 
-// Initialize Global Community Map
+// Lazy Loading
+let isInitialized = false;
+
 function initializeGlobalCommunity() {
+  if (isInitialized) return;
+  isInitialized = true;
+  
   const container = document.getElementById('personMarkersContainer');
-  const canvas = document.getElementById('connectionCanvas');
+  if (!container) return;
   
-  if (!container || !canvas) return;
-  
-  // Set canvas size
-  const rect = container.getBoundingClientRect();
-  canvas.width = rect.width;
-  canvas.height = rect.height;
-  
-  // Create person markers
+  // Create markers with staggered loading
   communityMembers.forEach((person, index) => {
-    const marker = createPersonMarker(person, index);
-    container.appendChild(marker);
+    setTimeout(() => {
+      const marker = createPersonMarker(person);
+      container.appendChild(marker);
+    }, index * 80);
   });
   
-  // Update statistics
   updateStatistics();
-  
-  // Setup filter buttons
   setupFilterButtons();
-  
-  // Setup modal listeners
-  setupModalListeners();
-  
-  // Draw connection lines
-  setTimeout(() => drawConnections(), 500);
 }
 
 // Create Person Marker
-function createPersonMarker(person, index) {
+function createPersonMarker(person) {
   const marker = document.createElement('div');
   marker.className = `person-marker ${person.type}`;
   marker.dataset.type = person.type;
-  marker.dataset.index = index;
-  marker.style.left = `${person.lng}%`;
-  marker.style.top = `${person.lat}%`;
-  marker.style.animationDelay = `${index * 0.1}s`;
+  marker.dataset.name = person.name;
+  marker.style.left = `${person.x}%`;
+  marker.style.top = `${person.y}%`;
   
-  // Create image
+  // Lazy load image
   const img = document.createElement('img');
-  img.src = person.image;
+  img.loading = 'lazy';
   img.alt = person.name;
-  img.onerror = function() {
-    this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23017d03" width="100" height="100"/><text x="50" y="50" text-anchor="middle" dy=".3em" fill="white" font-size="40" font-weight="bold" font-family="sans-serif">' + person.name.charAt(0) + '</text></svg>';
+  img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Crect fill="%23017d03" width="100" height="100"/%3E%3Ctext x="50" y="50" text-anchor="middle" dy=".3em" fill="white" font-size="40" font-weight="bold"%3E' + person.name.charAt(0) + '%3C/text%3E%3C/svg%3E';
+  
+  const actualImg = new Image();
+  actualImg.onload = function() {
+    img.src = actualImg.src;
   };
+  actualImg.src = person.image;
+  
   marker.appendChild(img);
-  
-  // Create info tooltip
-  const info = document.createElement('div');
-  info.className = 'person-info';
-  info.innerHTML = `
-    <span class="name">${person.name}</span>
-    <span class="role">${person.role}</span>
-    <span class="role-badge ${person.type}">${person.type}</span>
-  `;
-  marker.appendChild(info);
-  
-  // Add click event to open modal
-  marker.addEventListener('click', () => openPersonModal(person));
-  
   return marker;
-}
-
-// Open Person Modal
-function openPersonModal(person) {
-  const modal = document.getElementById('personModal');
-  if (!modal) return;
-  
-  // Update modal content
-  document.getElementById('modalImage').src = person.image;
-  document.getElementById('modalImage').alt = person.name;
-  document.getElementById('modalName').textContent = person.name;
-  document.getElementById('modalRole').textContent = person.role;
-  document.getElementById('modalType').textContent = person.type.charAt(0).toUpperCase() + person.type.slice(1);
-  
-  // Update badge
-  const badge = document.getElementById('modalBadge');
-  badge.textContent = person.type;
-  badge.className = `modal-badge ${person.type}`;
-  
-  // Show modal
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-// Close Person Modal
-function closePersonModal() {
-  const modal = document.getElementById('personModal');
-  if (!modal) return;
-  
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Setup Modal Event Listeners
-function setupModalListeners() {
-  const modal = document.getElementById('personModal');
-  const closeBtn = document.getElementById('modalClose');
-  const overlay = modal?.querySelector('.modal-overlay');
-  
-  if (!modal) return;
-  
-  // Close button
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closePersonModal);
-  }
-  
-  // Click outside to close
-  if (overlay) {
-    overlay.addEventListener('click', closePersonModal);
-  }
-  
-  // ESC key to close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closePersonModal();
-    }
-  });
 }
 
 // Update Statistics
@@ -3112,9 +2714,9 @@ function animateCounter(elementId, targetValue) {
   if (!element) return;
   
   let currentValue = 0;
-  const increment = targetValue / 50;
-  const duration = 1500;
-  const stepTime = duration / 50;
+  const increment = targetValue / 30;
+  const duration = 1000;
+  const stepTime = duration / 30;
   
   const counter = setInterval(() => {
     currentValue += increment;
@@ -3130,18 +2732,15 @@ function animateCounter(elementId, targetValue) {
 // Setup Filter Buttons
 function setupFilterButtons() {
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const markers = document.querySelectorAll('.person-marker');
   
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
-      // Remove active class from all buttons
       filterButtons.forEach(btn => btn.classList.remove('active'));
-      // Add active class to clicked button
       this.classList.add('active');
       
       const filter = this.dataset.filter;
+      const markers = document.querySelectorAll('.person-marker');
       
-      // Filter markers
       markers.forEach(marker => {
         if (filter === 'all' || marker.dataset.type === filter) {
           marker.classList.remove('hidden');
@@ -3149,83 +2748,39 @@ function setupFilterButtons() {
           marker.classList.add('hidden');
         }
       });
-      
-      // Redraw connections
-      setTimeout(() => drawConnections(), 300);
     });
   });
 }
 
-// Draw Connection Lines
-function drawConnections() {
-  const canvas = document.getElementById('connectionCanvas');
-  const container = document.getElementById('personMarkersContainer');
-  
-  if (!canvas || !container) return;
-  
-  const ctx = canvas.getContext('2d');
-  const markers = container.querySelectorAll('.person-marker:not(.hidden)');
-  
-  // Clear canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-  // Draw lines between nearby markers
-  const positions = [];
-  markers.forEach(marker => {
-    const rect = marker.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
-    positions.push({
-      x: rect.left - containerRect.left + rect.width / 2,
-      y: rect.top - containerRect.top + rect.height / 2,
-      type: marker.dataset.type
-    });
+// Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !isInitialized) {
+      initializeGlobalCommunity();
+      observer.unobserve(entry.target);
+    }
   });
-  
-  // Draw connections
-  ctx.strokeStyle = 'rgba(1, 125, 3, 0.1)';
-  ctx.lineWidth = 1;
-  
-  for (let i = 0; i < positions.length; i++) {
-    for (let j = i + 1; j < positions.length; j++) {
-      const dist = Math.sqrt(
-        Math.pow(positions[i].x - positions[j].x, 2) + 
-        Math.pow(positions[i].y - positions[j].y, 2)
-      );
-      
-      // Only draw lines for relatively close markers
-      if (dist < 200) {
-        ctx.beginPath();
-        ctx.moveTo(positions[i].x, positions[i].y);
-        ctx.lineTo(positions[j].x, positions[j].y);
-        ctx.stroke();
-      }
-    }
-  }
-}
-
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeGlobalCommunity);
-} else {
-  initializeGlobalCommunity();
-}
-
-// Redraw on resize
-let resizeTimeout;
-window.addEventListener('resize', function() {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(() => {
-    const canvas = document.getElementById('connectionCanvas');
-    const container = document.getElementById('personMarkersContainer');
-    if (canvas && container) {
-      const rect = container.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-      drawConnections();
-    }
-  }, 250);
+}, {
+  root: null,
+  rootMargin: '200px',
+  threshold: 0
 });
+
+// Initialize
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.getElementById('global-community-sec');
+    if (section) observer.observe(section);
+  });
+} else {
+  const section = document.getElementById('global-community-sec');
+  if (section) observer.observe(section);
+}
 </script>
+
+
+
+
     <section class="overflow-hidden bg-smoke2" id="testi-sec">
       <div class="shape-mockup testi-shape1" data-top="0" data-left="0">
         <img src="assets/img/normal/testi_shape.png" width="200px" alt="shape" />
